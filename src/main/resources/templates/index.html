@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div style="text-align: center;margin:0 auto;width: 1000px; ">
+    <h1>SpringBoot + Mybatis + MySql 最简单增删改查学习示例</h1>
+    <h2>--致额方--</h2>
+</div>
+<div style="text-align: center;margin:0 auto;width: 650px; ">
+    <table width="100%" border="1" cellspacing="1" cellpadding="0">
+        <tr>
+            <td>ID</td>
+            <td>姓名</td>
+            <td>年龄</td>
+        </tr>
+        <!--/*@thymesVar id="users" type=""*/-->
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.age}"></td>
+        </tr>
+    </table>
+</div>
+<div style="text-align: left;margin:10px auto;width: 650px; ">
+    <h4>1.查询所有数据：http://localhost:8080</h4>
+    <h4>2.插入数据：在URL后输入 /insert/{id}/{name}/{age}   例：/insert/1/efang/24</h4>
+    <h4>3.查询数据：在URL后输入 /select/{id}   例：/select/1</h4>
+    <h4>4.更改数据：在URL后输入 /update/{id}/{name}/{age}   例：/update/1/echang/25</h4>
+    <h4>5.删除数据：在URL后输入 /delete/{id}   例：/delete/1</h4>
+</div>
+
+</body>
+</html>
