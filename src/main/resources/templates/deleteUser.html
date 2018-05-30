@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <script type="text/javascript" src="//res.hjfile.cn/tool/lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+    function deleteUserById() {
+        var delete_user_by_id = $("#delete_user_by_id").val();
+        $.ajax({
+            type:"post",
+            url:"/deleteUserButton",
+            data:'id':1,
+            contentType:"json",
+            success:function(){},
+            error:function(){}
+        });
+    }
+
+    </script>
+</head>
+<body>
+
+<div style="text-align: center;margin:0 auto;width: 1000px; ">
+    <h1>SpringBoot + Mybatis + MySql 最简单增删改查学习示例</h1>
+</div>
+<div style="text-align: center;margin:0 auto;width: 650px; ">
+    <table width="100%" border="1" cellspacing="1" cellpadding="0">
+        <h5>请输入要删除用户的ID</h5>
+        <tr>
+            <td width="120px">ID</td>
+            <td width="120px">操作</td>
+        </tr>
+        <form method="get" action="/deleteUserButton">
+            <tr>
+                <td><input id="delete_user_by_id"></td>
+                <td><button type="submit">删除</button></td>
+            </tr>
+        </form>
+    </table>
+</div>
+
+</body>
+</html>

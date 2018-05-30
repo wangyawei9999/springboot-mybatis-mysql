@@ -81,12 +81,25 @@ public class UserController {
         return "redirect:/";
     }
 
-    @RequestMapping(value = "/jsontest")
-    public String jsonString(@RequestParam(value = "name", required = true) String name,
-                             @RequestParam(value = "age", required = true) String age) {
-        System.out.println(name);
-        System.out.println(age);
-        return name + ", " + age;
+    @RequestMapping(value = "/addUser")
+    public String addUser() {
+        return "/addUser";
+    }
+
+    @RequestMapping(value = "/addUserButton")
+    public String addUserButton() {
+        return "redirect:/";
+    }
+
+    @RequestMapping(value = "/deleteUser")
+    public String deleteUser() {
+        return "/deleteUser";
+    }
+
+    @RequestMapping(value = "/deleteUserButton")
+    public String deleteUserButton(@RequestParam("delete_user_by_id") int id) {
+        userMapper.deleteUserById(id);
+        return "redirect:/";
     }
 
 }

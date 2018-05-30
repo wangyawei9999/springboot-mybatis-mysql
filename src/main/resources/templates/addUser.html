@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div style="text-align: center;margin:0 auto;width: 1000px; ">
+    <h1>SpringBoot + Mybatis + MySql 最简单增删改查学习示例</h1>
+</div>
+<div style="text-align: center;margin:0 auto;width: 650px; ">
+    <table width="100%" border="1" cellspacing="1" cellpadding="0">
+        <tr>
+            <td width="120px">ID</td>
+            <td width="120px">姓名</td>
+            <td width="120px">年龄</td>
+            <td width="120px">操作</td>
+        </tr>
+        <!--/*@thymesVar id="users" type=""*/-->
+        <tr>
+            <td><input></td>
+            <td><input></td>
+            <td><input></td>
+            <!--<td><button onclick="window.location.href='/addUserSubmit'">确定</button></td>-->
+            <!--<td><a href="/addUserSubmit" class="button">确定</a> </td>-->
+            <!--<td><a href="/addUserSubmit"><button>确定</button></a> </td>-->
+            <td>
+                <form method="get" action="/addUserButton">
+                    <button type="submit">添加</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>
