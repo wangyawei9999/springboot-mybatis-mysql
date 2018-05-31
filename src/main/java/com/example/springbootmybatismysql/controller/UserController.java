@@ -88,7 +88,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/addUserButton")
-    public String addUserButton() {
+    public String addUserButton(@RequestParam("userId") int id, @RequestParam("userName") String name, @RequestParam("userAge") int age) {
+        userMapper.insertUser(id, name, age);
         return "redirect:/";
     }
 
@@ -100,6 +101,17 @@ public class UserController {
     @RequestMapping(value = "/deleteUserButton")
     public String deleteUserButton(@RequestParam(value = "deleteInputId") int id) {
         userMapper.deleteUserById(id);
+        return "redirect:/";
+    }
+
+    @RequestMapping(value = "/updateUser")
+    public String updateUser() {
+        return "/updateUser";
+    }
+
+    @RequestMapping(value = "/updateUserButton")
+    public String updateUserButton(@RequestParam("userId") int id, @RequestParam("userName") String name, @RequestParam("userAge") int age) {
+        userMapper.updateUserById(id, name, age);
         return "redirect:/";
     }
 
