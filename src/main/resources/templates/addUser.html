@@ -8,6 +8,7 @@
 
 <div style="text-align: center;margin:0 auto;width: 1000px; ">
     <h1>SpringBoot + Mybatis + MySql 最简单增删改查学习示例</h1>
+    <h4><a href="/"><button>返回首页</button></a></h4>
 </div>
 <div style="text-align: center;margin:0 auto;width: 650px; ">
     <table width="100%" border="1" cellspacing="1" cellpadding="0">
@@ -19,17 +20,29 @@
         </tr>
         <form method="post" action="/addUserButton">
             <tr>
-                <td><input name="userId"></td>
-                <td><input name="userName"></td>
-                <td><input name="userAge"></td>
+                <td><input value="请输入id" id="userId" onfocus="javascript:this.value=''" name="userId"></td>
+                <td><input id="userName" name="userName"></td>
+                <td><input id="userAge" name="userAge"></td>
                 <!--<td><button onclick="window.location.href='/addUserSubmit'">确定</button></td>-->
                 <!--<td><a href="/addUserSubmit" class="button">确定</a> </td>-->
                 <!--<td><a href="/addUserSubmit"><button>确定</button></a> </td>-->
-                <td><button type="submit">添加</button></td>
+                <td>
+                    <button type="submit" onclick="checkform()">添加</button>
+                </td>
             </tr>
         </form>
     </table>
 </div>
+
+<script type="text/javascript">
+function checkform(){
+    if(document.getElementById('userId').value.length==0){
+        alert('输入为空,请重新输入！');
+        document.getElementById('userId').focus();
+        return false;
+    }
+}
+</script>
 
 </body>
 </html>
