@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.example.springbootmybatismysql.mapper.AdminMapper">
+
+    <resultMap id = "admin" type = "com.example.springbootmybatismysql.domain.Admin">
+        <result property = "account" column = "account"/>
+        <result property = "password" column = "password"/>
+    </resultMap>
+
+    <insert id = "insertAdmin">
+        INSERT INTO admin_table (account, password) VALUES (#{account}, #{password});
+    </insert>
+
+    <select id="selectAdminByAccount" resultMap="admin">
+        SELECT * FROM admin_table WHERE account = #{account};
+    </select>
+
+</mapper>
