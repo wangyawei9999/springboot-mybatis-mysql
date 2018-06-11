@@ -20,12 +20,16 @@
             <td><strong>ID</strong></td>
             <td><strong>姓名</strong></td>
             <td><strong>年龄</strong></td>
+            <td><strong>头像</strong></td>
         </tr>
         <!--/*@thymesVar id="users" type=""*/-->
         <tr th:each="user : ${users}">
             <td th:text="${user.id}"></td>
             <td th:text="${user.name}"></td>
             <td th:text="${user.age}"></td>
+            <td>
+                <img th:src="${user.avatar}" th:width="30" th:height="30">
+            </td>
         </tr>
     </table>
 </div>

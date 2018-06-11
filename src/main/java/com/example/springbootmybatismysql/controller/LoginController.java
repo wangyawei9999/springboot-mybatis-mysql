@@ -35,4 +35,9 @@ public class LoginController {
         adminMapper.insertAdmin(account, password);
         return "redirect:/login";
     }
+
+    @RequestMapping("/image")
+    public String image() {
+        return "404";
+    }
 }

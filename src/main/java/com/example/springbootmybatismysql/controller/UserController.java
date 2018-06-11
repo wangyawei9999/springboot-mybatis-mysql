@@ -53,9 +53,9 @@ public class UserController {
      * @param age
      * @return
      */
-    @RequestMapping(value = "/insert/{id}/{name}/{age}")
-    public String insertUser(@PathVariable int id, @PathVariable String name, @PathVariable int age) {
-        userMapper.insertUser(id, name, age);
+    @RequestMapping(value = "/insert/{id}/{name}/{age}/{avatar}")
+    public String insertUser(@PathVariable int id, @PathVariable String name, @PathVariable int age, @PathVariable String avatar) {
+        userMapper.insertUser(id, name, age, avatar);
         return "redirect:/";
     }
 
@@ -88,8 +88,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/addUserButton")
-    public String addUserButton(@RequestParam("userId") int id, @RequestParam("userName") String name, @RequestParam("userAge") int age) {
-        userMapper.insertUser(id, name, age);
+    public String addUserButton(@RequestParam("userId") int id, @RequestParam("userName") String name,
+                                @RequestParam("userAge") int age, @RequestParam("userAvatar") String avatar) {
+        userMapper.insertUser(id, name, age, avatar);
         return "redirect:/";
     }
 

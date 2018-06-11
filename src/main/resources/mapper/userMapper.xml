@@ -11,7 +11,7 @@
     </resultMap>
 
     <insert id = "insertUser">
-        INSERT INTO user_table (id, name, age) VALUES (#{id}, #{name}, #{age});
+        INSERT INTO user_table (id, name, age, avatar) VALUES (#{id}, #{name}, #{age}, #{avatar});
     </insert>
 
     <select id="selectAllUser" resultMap="user">

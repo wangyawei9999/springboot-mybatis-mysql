@@ -16,6 +16,7 @@
             <td width="120px"><strong>ID</strong></td>
             <td width="120px"><strong>姓名</strong></td>
             <td width="120px"><strong>年龄</strong></td>
+            <td width="120px"><strong>头像</strong></td>
             <td width="120px"><strong>操作</strong></td>
         </tr>
         <form method="post" action="/addUserButton">
@@ -23,6 +24,10 @@
                 <td><input id="userId" onfocus="javascript:this.value=''" name="userId"></td>
                 <td><input id="userName" name="userName"></td>
                 <td><input id="userAge" name="userAge"></td>
+                <!--<td><img type="image" id="userAvatar" name="userAvatar" value="选择文件"></td>-->
+                <td>
+                    <input id="userAvatar" name="userAvatar">
+                    <!--<img src="../static/image/sad.png" th:width="30" th:height="30"></td>-->
                 <!--<td><button onclick="window.location.href='/addUserSubmit'">确定</button></td>-->
                 <!--<td><a href="/addUserSubmit" class="button">确定</a> </td>-->
                 <!--<td><a href="/addUserSubmit"><button>确定</button></a> </td>-->
