@@ -27,7 +27,7 @@
     </delete>
 
     <update id="updateUserById">
-        UPDATE user_table SET name = #{name}, age = #{age} WHERE id = #{id};
+        UPDATE user_table SET name = #{name}, age = #{age}, avatar = #{avatar} WHERE id = #{id};
     </update>
 
 </mapper>

@@ -32,56 +32,6 @@ public class UserController {
         return modelAndView;
     }
 
-    /**
-     * 根据id查询数据
-     * @param id
-     * @return
-     */
-    @RequestMapping(value = "/select/{id}")
-    @ResponseBody
-    public ModelAndView selectUserById(@PathVariable int id) {
-        User user = userMapper.selectUserById(id);
-        ModelAndView modelAndView = new ModelAndView("/index");
-        modelAndView.addObject("users", user);
-        return modelAndView;
-    }
-
-    /**
-     * 插入数据
-     * @param id
-     * @param name
-     * @param age
-     * @return
-     */
-    @RequestMapping(value = "/insert/{id}/{name}/{age}/{avatar}")
-    public String insertUser(@PathVariable int id, @PathVariable String name, @PathVariable int age, @PathVariable String avatar) {
-        userMapper.insertUser(id, name, age, avatar);
-        return "redirect:/";
-    }
-
-
-    /**
-     * 根据id删除数据
-     * @param id
-     */
-    @RequestMapping(value = "/delete/{id}")
-    public String deleteUserById(@PathVariable int id) {
-        userMapper.deleteUserById(id);
-        return "redirect:/";
-    }
-
-    /**
-     * 根据id更新数据
-     * @param id
-     * @param name
-     * @param age
-     */
-    @RequestMapping(value = "/update/{id}/{name}/{age}")
-    public String updateUserById(@PathVariable int id, @PathVariable String name, @PathVariable int age) {
-        userMapper.updateUserById(id, name, age);
-        return "redirect:/";
-    }
-
     @RequestMapping(value = "/addUser")
     public String addUser() {
         return "/addUser";
@@ -89,13 +39,17 @@ public class UserController {
 
     @RequestMapping(value = "/addUserButton")
     public String addUserButton(@RequestParam("userId") int id, @RequestParam("userName") String name,
-                                @RequestParam("userAge") int age, String avatar,
-                                @RequestParam(value = "image001", required = false) boolean image001) {
-        if (image001) {
-            avatar = "../static/image/sad.png";
+                                @RequestParam("userAge") int age,
+                                @RequestParam(value = "boyImg", required = false) boolean boyImg,
+                                @RequestParam(value = "girlImg", required = false) boolean girlImg) {
+        if (boyImg) {
+            String avatar = "../static/image/boy.png";
+            userMapper.insertUser(id, name, age, avatar);
+        } else if (girlImg) {
+            String avatar = "../static/image/girl.png";
             userMapper.insertUser(id, name, age, avatar);
         } else {
-            avatar = "../static/image/hana.jpeg";
+            String avatar = "../static/image/sad.png";
             userMapper.insertUser(id, name, age, avatar);
         }
         return "redirect:/";
@@ -118,8 +72,20 @@ public class UserController {
     }
 
     @RequestMapping(value = "/updateUserButton")
-    public String updateUserButton(@RequestParam("userId") int id, @RequestParam("userName") String name, @RequestParam("userAge") int age) {
-        userMapper.updateUserById(id, name, age);
+    public String updateUserButton(@RequestParam("userId") int id, @RequestParam("userName") String name,
+                                   @RequestParam("userAge") int age,
+                                   @RequestParam(value = "boyImg", required = false) boolean boyImg,
+                                   @RequestParam(value = "girlImg", required = false) boolean gitlImg) {
+        if (boyImg) {
+            String avatar = "../static/image/boy.png";
+            userMapper.updateUserById(id, name, age, avatar);
+        } else if (gitlImg) {
+            String avatar = "../static/image/girl.png";
+            userMapper.updateUserById(id, name, age, avatar);
+        } else {
+            String avatar = "../static/image/sad.png";
+            userMapper.updateUserById(id, name, age, avatar);
+        }
         return "redirect:/";
     }
 

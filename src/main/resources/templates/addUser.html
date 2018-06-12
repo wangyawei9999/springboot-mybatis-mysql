@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:text-align="http://www.w3.org/1999/xhtml" xmlns:center>
 <head>
     <title>首页</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -12,12 +12,13 @@
         <button>返回首页</button>
     </a></h4>
 </div>
-<div style="text-align: center;margin:0 auto;width: 500px; ">
+<div style="text-align: center; margin:0 auto; width: 500px; ">
+    <p style="text-align: left">添加用户👇</p>
     <table width="100%" border="1" cellspacing="1" cellpadding="0">
         <form method="post" action="/addUserButton">
             <tr>
                 <td width="100px"><strong>ID</strong></td>
-                <td height="30px"><input id="userId" onfocus="javascript:this.value=''" name="userId"></td>
+                <td height="30px"><input id="userId" name="userId"></td>
             </tr>
             <tr>
                 <td><strong>姓名</strong></td>
@@ -30,7 +31,10 @@
             <tr>
                 <td><strong>头像</strong></td>
                 <td height="30px">
-                    <input type="checkbox" id="image001" name="image001">
+                    <img style="margin-left: 10px" src="../static/image/boy.png" width="30px" height="30px">
+                    <input style="height: 30px" type="checkbox" id="boyImg" name="boyImg">
+                    <img style="margin-left: 30px" src="../static/image/girl.png" width="30px" height="30px">
+                    <input style="height: 30px" type="checkbox" id="girlImg" name="girlImg">
                 </td>
             </tr>
             <tr>

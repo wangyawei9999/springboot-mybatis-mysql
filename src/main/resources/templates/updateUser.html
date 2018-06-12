@@ -10,20 +10,36 @@
     <h1>SpringBoot + Mybatis + MySql 最简单增删改查学习示例</h1>
     <h4><a href="/"><button>返回首页</button></a></h4>
 </div>
-<div style="text-align: center;margin:0 auto;width: 650px; ">
+<div style="text-align: center; margin:0 auto; width: 500px; ">
+    <p style="text-align: left">更改用户👇</p>
     <table width="100%" border="1" cellspacing="1" cellpadding="0">
-        <tr>
-            <td width="120px"><strong>ID</strong></td>
-            <td width="120px"><strong>姓名</strong></td>
-            <td width="120px"><strong>年龄</strong></td>
-            <td width="120px"><strong>操作</strong></td>
-        </tr>
-        <form method="get" action="/updateUserButton">
+        <form method="post" action="/updateUserButton">
             <tr>
-                <td><input name="userId"></td>
-                <td><input name="userName"></td>
-                <td><input name="userAge"></td>
-                <td><button type="submit">修改</button></td>
+                <td width="100px"><strong>ID</strong></td>
+                <td height="30px"><input id="userId" name="userId"></td>
+            </tr>
+            <tr>
+                <td><strong>姓名</strong></td>
+                <td height="30px"><input id="userName" name="userName"></td>
+            </tr>
+            <tr>
+                <td><strong>年龄</strong></td>
+                <td height="30px"><input id="userAge" name="userAge"></td>
+            </tr>
+            <tr>
+                <td><strong>头像</strong></td>
+                <td height="30px">
+                    <img style="margin-left: 10px" src="../static/image/boy.png" width="30px" height="30px">
+                    <input style="height: 30px" type="checkbox" id="boyImg" name="boyImg">
+                    <img style="margin-left: 30px" src="../static/image/girl.png" width="30px" height="30px">
+                    <input style="height: 30px" type="checkbox" id="girlImg" name="girlImg">
+                </td>
+            </tr>
+            <tr>
+                <td><strong>操作</strong></td>
+                <td height="36px">
+                    <button type="submit" onclick="checkform()">更改</button>
+                </td>
             </tr>
         </form>
     </table>

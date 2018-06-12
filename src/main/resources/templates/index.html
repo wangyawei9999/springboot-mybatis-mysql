@@ -17,28 +17,19 @@
 <div style="text-align: center;margin:0 auto;width: 650px; ">
     <table width="100%" border="1" cellspacing="1" cellpadding="0">
         <tr>
+            <td><strong>头像</strong></td>
             <td><strong>ID</strong></td>
             <td><strong>姓名</strong></td>
             <td><strong>年龄</strong></td>
-            <td><strong>头像</strong></td>
         </tr>
         <!--/*@thymesVar id="users" type=""*/-->
         <tr th:each="user : ${users}">
+            <td><img th:src="${user.avatar}" th:width="30" th:height="30"></td>
             <td th:text="${user.id}"></td>
             <td th:text="${user.name}"></td>
             <td th:text="${user.age}"></td>
-            <td>
-                <img th:src="${user.avatar}" th:width="30" th:height="30">
-            </td>
         </tr>
     </table>
-</div>
-<div style="text-align: left;margin:10px auto;width: 650px; ">
-    <h5>1.查询所有数据：http://localhost:8080</h5>
-    <h5>2.插入数据：在URL后输入 /insert/{id}/{name}/{age}   例：/insert/1/efang/24</h5>
-    <h5>3.查询数据：在URL后输入 /select/{id}   例：/select/1</h5>
-    <h5>4.更改数据：在URL后输入 /update/{id}/{name}/{age}   例：/update/1/echang/25</h5>
-    <h5>5.删除数据：在URL后输入 /delete/{id}   例：/delete/1</h5>
 </div>
 
 </body>

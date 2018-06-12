@@ -9,7 +9,8 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    int insertUser(@Param("id") int id, @Param("name") String name, @Param("age") int age, @Param("avatar") String avatar);
+    int insertUser(@Param("id") int id, @Param("name") String name, @Param("age") int age,
+                   @Param("avatar") String avatar);
 
     List<User> selectAllUser();
 
@@ -17,6 +18,7 @@ public interface UserMapper {
 
     int deleteUserById(int id);
 
-    int updateUserById(@Param("id") int id, @Param("name") String name, @Param("age") int age);
+    int updateUserById(@Param("id") int id, @Param("name") String name, @Param("age") int age,
+                       @Param("avatar") String avatar);
 
 }
