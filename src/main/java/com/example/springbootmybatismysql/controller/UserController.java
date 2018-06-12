@@ -89,8 +89,15 @@ public class UserController {
 
     @RequestMapping(value = "/addUserButton")
     public String addUserButton(@RequestParam("userId") int id, @RequestParam("userName") String name,
-                                @RequestParam("userAge") int age, @RequestParam("userAvatar") String avatar) {
-        userMapper.insertUser(id, name, age, avatar);
+                                @RequestParam("userAge") int age, String avatar,
+                                @RequestParam(value = "image001", required = false) boolean image001) {
+        if (image001) {
+            avatar = "../static/image/sad.png";
+            userMapper.insertUser(id, name, age, avatar);
+        } else {
+            avatar = "../static/image/hana.jpeg";
+            userMapper.insertUser(id, name, age, avatar);
+        }
         return "redirect:/";
     }
 
