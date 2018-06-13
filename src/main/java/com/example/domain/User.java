@@ -1,4 +1,4 @@
-package com.example.springbootmybatismysql.domain;
+package com.example.domain;
 
 import lombok.Getter;
 import lombok.Setter;

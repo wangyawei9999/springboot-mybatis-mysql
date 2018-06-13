@@ -1,6 +1,6 @@
-package com.example.springbootmybatismysql.controller;
+package com.example.controller;
 
-import com.example.springbootmybatismysql.mapper.AdminMapper;
+import com.example.mapper.AdminMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +31,8 @@ public class LoginController {
     }
 
     @RequestMapping("/registerAdminButton")
-    public String registerAdminButton(@RequestParam("accountRegister") String account, @RequestParam("passwordRegister") String password) {
+    public String registerAdminButton(@RequestParam("accountRegister") String account,
+                                      @RequestParam("passwordRegister") String password) {
         adminMapper.insertAdmin(account, password);
         return "redirect:/login";
     }

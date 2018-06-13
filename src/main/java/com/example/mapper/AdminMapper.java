@@ -1,6 +1,6 @@
-package com.example.springbootmybatismysql.mapper;
+package com.example.mapper;
 
-import com.example.springbootmybatismysql.domain.Admin;
+import com.example.domain.Admin;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace = "com.example.springbootmybatismysql.mapper.AdminMapper">
+<mapper namespace = "com.example.mapper.AdminMapper">
 
-    <resultMap id = "admin" type = "com.example.springbootmybatismysql.domain.Admin">
+    <resultMap id = "admin" type = "com.example.domain.Admin">
         <result property = "account" column = "account"/>
         <result property = "password" column = "password"/>
     </resultMap>
