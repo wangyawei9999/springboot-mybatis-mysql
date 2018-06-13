@@ -25,10 +25,11 @@ public class UserController {
      */
     @RequestMapping(value = "/")
     @ResponseBody
-    public ModelAndView selectAllUser(String account) {
+    public ModelAndView selectAllUser() {
         List<User> users = userMapper.selectAllUser();
         ModelAndView modelAndView = new ModelAndView("index.html");
         modelAndView.addObject("users", users);
+        modelAndView.addObject("account", "未登录");
         return modelAndView;
     }
 
@@ -75,11 +76,11 @@ public class UserController {
     public String updateUserButton(@RequestParam("userId") int id, @RequestParam("userName") String name,
                                    @RequestParam("userAge") int age,
                                    @RequestParam(value = "boyImg", required = false) boolean boyImg,
-                                   @RequestParam(value = "girlImg", required = false) boolean gitlImg) {
+                                   @RequestParam(value = "girlImg", required = false) boolean girlImg) {
         if (boyImg) {
             String avatar = "../static/image/boy.png";
             userMapper.updateUserById(id, name, age, avatar);
-        } else if (gitlImg) {
+        } else if (girlImg) {
             String avatar = "../static/image/girl.png";
             userMapper.updateUserById(id, name, age, avatar);
         } else {
