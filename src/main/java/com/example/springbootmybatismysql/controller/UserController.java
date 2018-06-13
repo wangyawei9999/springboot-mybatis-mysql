@@ -34,7 +34,7 @@ public class UserController {
 
     @RequestMapping(value = "/addUser")
     public String addUser() {
-        return "/addUser";
+        return "addUser.html";
     }
 
     @RequestMapping(value = "/addUserButton")
@@ -57,7 +57,7 @@ public class UserController {
 
     @RequestMapping(value = "/deleteUser")
     public String deleteUser() {
-        return "/deleteUser";
+        return "deleteUser.html";
     }
 
     @RequestMapping(value = "/deleteUserButton")
@@ -68,7 +68,7 @@ public class UserController {
 
     @RequestMapping(value = "/updateUser")
     public String updateUser() {
-        return "/updateUser";
+        return "updateUser.html";
     }
 
     @RequestMapping(value = "/updateUserButton")
