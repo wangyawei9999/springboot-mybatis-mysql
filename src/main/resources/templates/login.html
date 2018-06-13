@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>登录</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -7,13 +7,14 @@
 <body>
 
 <div style="text-align: center;margin:0 auto;width: 1000px; ">
+    <a href="/"><img src="../static/image/spring-boot.png" th:width="350" th:height="160"/></a>
     <h1>SpringBoot + Mybatis + MySql 最简单增删改查学习示例</h1>
 </div>
 <div style="text-align:center; margin:120px;">
     <h3>账户登录页面</h3>
-    <form method="get" action="/loginButton">
-        <h5>账户：<input name="account"></h5>
-        <h5>密码：<input name="password"></h5>
+    <form method="post" action="/loginButton">
+        <h5>账户：<input id="account" name="account"></h5>
+        <h5>密码：<input id="password" name="password"></h5>
         <a href="/register"><button type="button">注册</button></a>
         <button type="submit">登录</button>
     </form>

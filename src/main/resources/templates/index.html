@@ -8,6 +8,17 @@
 
 <div style="text-align: center;margin:0 auto;width: 1000px; ">
     <a href="/"><img src="../static/image/spring-boot.png" th:width="350" th:height="160"/></a>
+    <!--/*@thymesVar id="account" type=""*/-->
+    <div>
+        <h3 style="display: inline">欢迎用户：</h3>
+        <h3 th:text="${account}" style="display: inline; color: crimson"></h3>
+        <h3 style="display: inline">登陆成功！</h3>
+    </div>
+    <div>
+        <p/>
+        <a href="/login"><button>登录</button></a>
+        <a href="/register"><button>注册</button></a>
+    </div>
     <h1>SpringBoot + Mybatis + MySql 最简单增删改查学习示例</h1>
     <h4>
         <a href="/addUser"><button>添加用户</button></a>
@@ -25,7 +36,8 @@
         </tr>
         <!--/*@thymesVar id="users" type=""*/-->
         <tr th:each="user : ${users}">
-            <td><img th:src="${user.avatar}" th:width="30" th:height="30"></td>
+            <td><!--/*@thymesVar id="avatar" type=""*/-->
+            <img th:src="${user.avatar}" th:width="30" th:height="30"></td>
             <td th:text="${user.id}"></td>
             <td th:text="${user.name}"></td>
             <td th:text="${user.age}"></td>

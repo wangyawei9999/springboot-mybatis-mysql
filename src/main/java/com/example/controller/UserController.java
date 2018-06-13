@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import com.example.domain.Admin;
+import com.example.mapper.AdminMapper;
 import com.example.mapper.UserMapper;
 import com.example.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +25,9 @@ public class UserController {
      */
     @RequestMapping(value = "/")
     @ResponseBody
-    public ModelAndView selectAllUser() {
+    public ModelAndView selectAllUser(String account) {
         List<User> users = userMapper.selectAllUser();
-        ModelAndView modelAndView = new ModelAndView("/index");
+        ModelAndView modelAndView = new ModelAndView("index.html");
         modelAndView.addObject("users", users);
         return modelAndView;
     }
