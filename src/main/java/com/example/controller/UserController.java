@@ -24,7 +24,7 @@ public class UserController {
 
     @Autowired
     private UserMapper userMapper;
-    
+
     @GetMapping(value = "/")
     @ResponseBody
     @ApiOperation(value = "查询所有用户", notes = "查询所有用户")
