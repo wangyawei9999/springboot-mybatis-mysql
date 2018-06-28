@@ -1,12 +1,17 @@
 package com.example.controller;
 
 import com.example.domain.Admin;
+import com.example.exception.BusinessErrorException;
+import com.example.exception.BusinessMsgEnum;
+import com.example.exception.GlobalExceptionHandler;
 import com.example.mapper.AdminMapper;
 import com.example.mapper.UserMapper;
 import com.example.domain.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.TypeMismatchException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,11 +24,7 @@ public class UserController {
 
     @Autowired
     private UserMapper userMapper;
-
-    /**
-     * 查询所有的数据
-     * @return
-     */
+    
     @GetMapping(value = "/")
     @ResponseBody
     @ApiOperation(value = "查询所有用户", notes = "查询所有用户")
@@ -99,5 +100,4 @@ public class UserController {
         }
         return "redirect:/";
     }
-
 }
